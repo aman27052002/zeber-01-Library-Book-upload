@@ -24,7 +24,7 @@ const FileUpload = ({ fileType, onFileChange }) => {
   };
 
   return (
-    <label className="h-42 w-50 flex flex-col gap-5 cursor-pointer items-center justify-center border-2 border-dashed p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg">
+    <label className="h-42 w-50 flex flex-col gap-5 cursor-pointer items-center justify-center border-2  border-stone-500 border-dashed p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg">
       <div className="icon flex items-center justify-center">
         <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24" className="h-20 fill-gray-600">
           <g strokeWidth="0" id="SVGRepo_bgCarrier"></g>
