@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import FileUpload from "../FileUpload";
 import Button from "../Button/Button";
 import axios from "axios";
+import {X} from 'lucide-react'
 
-export default function Form() {
+export default function Form({onClose}) {
   const [formData, setFormData] = useState({
     name: "",
     author: "",
@@ -12,7 +13,7 @@ export default function Form() {
     bookImage: null,
     bookPDF: null,
   });
-
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -58,7 +59,13 @@ export default function Form() {
   };
 
   return (
-    <form
+    <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
+      <div className="mt-10 flex flex-col gap-5 ">
+      <button 
+      onClick={onClose}
+      className="place-self-end text-white"
+      ><X size={30}/></button>
+      <form
       className="p-8 rounded-3xl shadow-lg w-full max-w-lg mx-auto space-y-6 border border-gray-200 bg-gray-50"
       onSubmit={handleSubmit}
     >
@@ -174,5 +181,7 @@ export default function Form() {
 
       <Button />
     </form>
+      </div>
+    </div>
   );
 }
