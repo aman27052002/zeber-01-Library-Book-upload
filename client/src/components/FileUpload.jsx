@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const FileUpload = ({ fileType, onFileChange }) => {
+const FileUpload = ({ fileType, onFileChange}) => {
   const [fileInfo, setFileInfo] = useState('');
 
   const handleFileChange = (e) => {
@@ -20,8 +20,10 @@ const FileUpload = ({ fileType, onFileChange }) => {
       if (onFileChange) {
         onFileChange(file, fileType);
       }
+
     }
   };
+
 
   return (
     <label className="h-42 w-50 flex flex-col gap-5 cursor-pointer items-center justify-center border-2  border-stone-500 border-dashed p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg">

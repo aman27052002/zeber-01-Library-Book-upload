@@ -15,6 +15,7 @@ app.set("views",path.resolve('./views'))
 
 app.use(cors())
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
 app.use('/',router)
 
 app.get(express.urlencoded({extended:false})) // helps to parse the form data

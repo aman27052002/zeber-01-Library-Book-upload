@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AddFileButton = ({btn,setBtn}) => {
+const AddFileButton = ({}) => {
   return (
     <button className="flex items-center gap-3 px-6 py-3 bg-blue-500 text-white text-xs font-bold uppercase rounded-md shadow-md hover:shadow-lg focus:opacity-85 focus:shadow-none transition-all ease-in-out duration-600">
       <svg
