@@ -2,9 +2,15 @@ import React, { useState, useEffect } from "react";
 import FileUpload from "../FileUpload";
 import Button from "../Button/Button";
 import axios from "axios";
+<<<<<<< HEAD
 import { X } from 'lucide-react';
 import EmailTrackingForm from '../EmailTrackingForm'
 export default function Form({ onClose }) {
+=======
+import {X} from 'lucide-react'
+
+export default function Form({onClose}) {
+>>>>>>> 914c3be530ddc1b12537a0cde5a9464174a5b7d7
   const [formData, setFormData] = useState({
     name: "",
     author: "",
@@ -14,9 +20,12 @@ export default function Form({ onClose }) {
     bookPDF: null,
   });
   
+<<<<<<< HEAD
   const [resetTrigger, setResetTrigger] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+=======
+>>>>>>> 914c3be530ddc1b12537a0cde5a9464174a5b7d7
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -81,6 +90,7 @@ export default function Form({ onClose }) {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
       <div className="mt-10 flex flex-col gap-5 ">
+<<<<<<< HEAD
         <button 
           onClick={onClose}
           className="place-self-end text-white"
@@ -97,6 +107,52 @@ export default function Form({ onClose }) {
               Thank you for your submission. Your book is currently under review.
             </p>
             <EmailTrackingForm/>
+=======
+      <button 
+      onClick={onClose}
+      className="place-self-end text-white"
+      ><X size={30}/></button>
+      <form
+      className="p-8 rounded-3xl shadow-lg w-full max-w-lg mx-auto space-y-6 border border-gray-200 bg-gray-50"
+      onSubmit={handleSubmit}
+    >
+      <h2 className="text-2xl font-semibold text-center text-gray-800">
+        Upload Your Books
+      </h2>
+
+      <div className="flex space-x-4 justify-center">
+        <FileUpload
+          fileType="cover Image"
+          file={formData.bookImage}
+          onFileChange={(file) => handleFileChange(file, "bookImage")}
+        />
+        <FileUpload
+          fileType="book PDF"
+          file={formData.bookPDF}
+          onFileChange={(file) => handleFileChange(file, "bookPDF")}
+        />
+      </div>
+
+      <div className="space-y-4">
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="name-input"
+            >
+              Name of the book
+            </label>
+            <input
+              className="text-sm w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm transition-transform duration-300 ease-in-out focus:outline-blue-500 hover:shadow-xl bg-gray-50"
+              placeholder="Enter book's name"
+              type="text"
+              id="name-input"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+>>>>>>> 914c3be530ddc1b12537a0cde5a9464174a5b7d7
           </div>
         ) : (
           <form
@@ -216,6 +272,17 @@ export default function Form({ onClose }) {
           </form>
         )}
       </div>
+<<<<<<< HEAD
+=======
+
+      <p className="text-center text-lg text-gray-700 mt-4">
+        Want to share more books? Feel free to upload as many as you like!
+      </p>
+
+      <Button />
+    </form>
+      </div>
+>>>>>>> 914c3be530ddc1b12537a0cde5a9464174a5b7d7
     </div>
   );
 }
